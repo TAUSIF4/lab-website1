@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Bookings</title>
+  <style>
+    body{font-family:Inter,Arial;padding:18px;background:#f6f7fb}
+    .card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(10,10,30,0.06)}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+    button{padding:6px 10px;border-radius:6px;border:0;cursor:pointer}
+    .del{background:#f44336;color:#fff}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Bookings — Admin</h2>
+    <div>
+      <label>Password: <input id="pw" type="password" /></label>
+      <button onclick="load()">Load bookings</button>
+    </div>
+
+    <div id="tableWrap"></div>
+  </div>
+
+  <script>
+    async function load(){
+      const pw = document.getElementById('pw').value;
+      if(!pw){ alert('Enter password'); return; }
+      const res = await fetch('/admin/bookings?pass='+encodeURIComponent(pw));
+      if(res.status === 401){ alert('Unauthorized'); return; }
+      if(!res.ok){ alert('Failed to load'); return; }
+      const data = await res.json();
+      renderTable(data, pw);
+    }
+
+    function renderTable(data, pw){
+      if(!data.length){ document.getElementById('tableWrap').innerHTML = '<p>No bookings yet.</p>'; return; }
+      let html = '<table><thead><tr><th>Id</th><th>Name</th><th>Phone</th><th>Tests</th><th>Address</th><th>Time</th><th>Created At</th><th>Action</th></tr></thead><tbody>';
+      data.forEach(b => {
+        html += `<tr id="r${b.id}"><td>${b.id}</td><td>${escapeHtml(b.name)}</td><td>${escapeHtml(b.phone)}</td><td>${escapeHtml(b.tests)}</td><td>${escapeHtml(b.address)}</td><td>${escapeHtml(b.time||'')}</td><td>${escapeHtml(b.createdAt)}</td><td><button class="del" onclick="del('${b.id}','${pw}')">Delete</button></td></tr>`;
+      });
+      html += '</tbody></table>';
+      document.getElementById('tableWrap').innerHTML = html;
+    }
+
+    function escapeHtml(s){ return (s||'').toString().replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    async function del(id, pw){
+      if(!confirm('Delete booking '+id+'?')) return;
+      const res = await fetch('/admin/bookings/'+encodeURIComponent(id)+'?pass='+encodeURIComponent(pw), { method:'DELETE' });
+      if(res.ok){ document.getElementById('r'+id)?.remove(); alert('Deleted'); }
+      else alert('Delete failed');
+    }
+  </script>
+</body>
+</html>
