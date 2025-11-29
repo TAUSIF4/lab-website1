@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="sFitFziOUOeCC3L3fNPtcyhwUgkneRDUiaidtxz6jaQ" />  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Satvik Laboratory — Precise Blood Testing</title>
   <meta name="description" content="Satvik Laboratory — Home sample collection, NABL & ISO accredited lab. Book blood tests and full-body checkup." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --accent:#d23a3a;
@@ -35,13 +35,11 @@
     .btn{background:var(--accent); color:#fff; padding:10px 16px; border-radius:10px; border:0; cursor:pointer; font-weight:700;}
     .btn.secondary{background:transparent; color:var(--accent); border:2px solid rgba(210,58,58,0.12);}
     .services{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px;}
-    .service{padding:12px; border-radius:10px; background:linear-gradient(180deg,#fff,#fafafa); border:1px solid #f0f0f0;}
+    .service{padding:12px; border-radius:10px; background:#fff; border:1px solid #f0f0f0;}
     .right-panel img{width:100%; height:auto; border-radius:10px;}
     .info-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px;}
     .badge{padding:14px; text-align:center; border-radius:10px; background:#fff; font-weight:600;}
-    .tests-list{display:flex; flex-direction:column; gap:8px; margin-top:18px;}
     .footer{margin-top:20px; padding:20px 0; border-top:1px solid #eee; text-align:center; color:var(--muted);}
-    /* responsive */
     @media (max-width:900px){
       .hero{grid-template-columns:1fr; padding:18px;}
       .services{grid-template-columns:repeat(2,1fr);}
@@ -54,19 +52,16 @@
       .wrap{padding:12px}
       h1{font-size:26px}
     }
-    label{display:block; font-weight:600; margin-bottom:6px;}
-    input, textarea, select{width:100%; padding:10px; border-radius:8px; border:1px solid #e6e6e6;}
-    form .row{display:flex; gap:8px;}
-    form .row .col{flex:1}
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap">
       <div class="logo"><img src="logo.png" alt="Satvik Laboratory logo"></div>
+      <div style="font-size: 24px; font-weight: 700;"><strong>Satvik Laboratory</strong></div>
       <nav>
         <a href="#services">Tests</a>
-        <a href="#homeCollection">Home Sample</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -74,40 +69,33 @@
   </header>
 
   <main>
+
+    <!-- Hero -->
     <section class="hero">
       <div class="card">
         <span class="tag">Automatic Computerized Laboratory • NABL | ISO | ICMR</span>
-        <h1>Satvik Laboratory — Precise Blood Testing</h1>
-        <p class="muted">Home sample collection available • 24×7 service • Accredited lab for accurate tests like CBC, Thyroid, Liver, Kidney, Diabetic profile and full body checkup.</p>
+        <h1>Precise Blood Testing</h1>
+        <p class="muted">Accurate tests done with modern equipment • Home sample collection • 24×7 service.</p>
 
         <div class="cta-row">
-          <button class="btn" onclick="scrollToForm()">Book Home Sample</button>
+          <a href="tel:9817346486"><button class="btn">Call Now</button></a>
           <button class="btn secondary" onclick="location.href='#services'">View Tests</button>
         </div>
 
         <div class="services" id="services">
-          <div class="service">Haemogram (CBC)</div>
-          <div class="service">Thyroid Profile</div>
+          <div class="service">CBC</div>
+          <div class="service">Thyroid (T3/T4/TSH)</div>
           <div class="service">Diabetic Profile</div>
-          <div class="service">Liver Profile</div>
-          <div class="service">Kidney Profile</div>
+          <div class="service">Liver Function Test</div>
+          <div class="service">Kidney Function Test</div>
           <div class="service">Dengue / Malaria</div>
-        </div>
-
-        <div style="margin-top:18px;">
-          <strong>Available packages:</strong>
-          <div class="tests-list">
-            <div>Full Body Checkup</div>
-            <div>Preventive Health Package</div>
-            <div>Stool & Urine Testing</div>
-          </div>
         </div>
       </div>
 
       <aside class="card right-panel">
-        <img src="assets/flyer.jpg" alt="Lab flyer — home sample & contact">
+        <img src="assets/flyer.jpg" alt="Satvik Laboratory flyer">
         <div style="margin-top:12px;">
-          <div style="display:flex; gap:8px; align-items:center; justify-content:space-between;">
+          <div style="display:flex; justify-content:space-between;">
             <div>
               <div style="font-weight:700">Home Sample Collection</div>
               <div style="color:var(--muted)">Call: <a href="tel:9817346486">98173 46486</a></div>
@@ -121,97 +109,38 @@
       </aside>
     </section>
 
-    <section class="wrap card" id="homeCollection" style="margin-top:18px;">
-      <div style="flex:1">
-        <h2 style="margin-top:0">Book Home Sample Collection</h2>
-        <p class="tag">Enter your details and preferred time. We'll confirm by call.</p>
-
-        <form id="bookingForm" onsubmit="submitForm(event)">
-          <div class="row">
-            <div class="col">
-              <label for="name">Full name</label>
-              <input id="name" name="name" required />
-            </div>
-            <div class="col">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" pattern="[0-9+ ]{7,20}" required />
-            </div>
-          </div>
-
-          <div style="margin-top:10px;">
-            <label for="tests">Select Test / Package</label>
-            <select id="tests" name="tests" required>
-              <option value="">Choose...</option>
-              <option>Haemogram (CBC)</option>
-              <option>Thyroid Profile</option>
-              <option>Diabetic Profile</option>
-              <option>Full Body Checkup</option>
-              <option>Preventive Health Package</option>
-            </select>
-          </div>
-
-          <div style="margin-top:10px;">
-            <label for="address">Pickup Address</label>
-            <input id="address" name="address" required />
-          </div>
-
-          <div style="margin-top:10px;">
-            <label for="time">Preferred date & time</label>
-            <input id="time" name="time" type="datetime-local" />
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:8px;">
-            <button class="btn" type="submit">Request Pickup</button>
-            <button class="btn secondary" type="button" onclick="resetForm()">Reset</button>
-          </div>
-
-          <div id="formMsg" style="margin-top:10px; color:green; display:none;">Request sent — we'll call to confirm.</div>
-        </form>
-      </div>
-
-      <div style="width:320px; margin-left:18px;">
-        <h3 style="margin:0 0 8px 0">Why choose us?</h3>
-        <div class="info-grid">
-          <div class="badge">NABL</div>
-          <div class="badge">ISO</div>
-          <div class="badge">ICMR</div>
-          <div class="badge">Accurate</div>
-          <div class="badge">Home Collection</div>
-          <div class="badge">24×7</div>
-        </div>
-        <p style="color:var(--muted); margin-top:12px;">We follow strict sample handling and quality-controlled lab processes to ensure reliable results.</p>
-      </div>
-    </section>
-
+    <!-- About -->
     <section class="wrap" id="about" style="margin-top:18px;">
-      <div class="card" style="width:100%;">
+      <div class="card">
         <h2>About Satvik Laboratory</h2>
         <p class="tag">Accredited Lab • Experienced technicians • Digital reports</p>
-        <p>Satvik Laboratory is an accredited diagnostic centre offering a wide range of tests. We provide digital reports and home sample collection to make diagnostic testing convenient.</p>
-        <h4>Contact</h4>
-        <p>Phone: <a href="tel:9817346486">98173 46486</a> • Email: <a href="mailto:info@satviklab.example">info@satviklab.example</a></p>
+        <p>Satvik Laboratory provides reliable diagnostic services with certified equipment and trained staff. Reports are delivered digitally for convenience.</p>
       </div>
     </section>
 
+    <!-- Contact -->
     <section class="wrap" id="contact" style="margin-top:18px;">
-      <div class="card" style="width:100%;">
+      <div class="card">
         <h2>Contact & Visit</h2>
-        <p class="tag">Office hours and location</p>
+
         <div style="display:flex; gap:20px; flex-wrap:wrap;">
-          <div style="flex:1; min-width:220px;">
+          <div style="flex:1; min-width:240px;">
             <strong>Address</strong>
-            <p>Address: Ghuda chowk, Gohana - Meham Rd, Gohana, Haryana 131301</p>
-            <strong>Phone</strong><p><a href="tel:9817346486">98173 46486</a></p>
+            <p>Ghida Chowk, Gohana - Meham Rd, Gohana, Haryana 131301</p>
+
+            <strong>Phone</strong>
+            <p><a href="tel:9817346486">98173 46486</a></p>
+
+            <strong>Hours</strong>
+            <p class="muted">Open 24×7</p>
           </div>
-          <div style="flex:1; min-width:220px;">
+
+          <div style="flex:1; min-width:240px;">
             <strong>Send a message</strong>
-            <form id="contactForm" onsubmit="submitContact(event)">
-              <label>Name</label><input id="cname" required/>
-              <label>Email</label><input id="cemail" type="email" required/>
-              <label>Message</label><textarea id="cmsg" rows="3" required></textarea>
-              <div style="margin-top:8px;"><button class="btn">Send</button></div>
-            </form>
-            <div id="cmsgbox" style="display:none; color:green; margin-top:8px;">Message sent. We'll reply soon.</div>
+            <p class="muted">For any queries, call or WhatsApp:</p>
+            <a href="https://wa.me/919817346486" target="_blank">
+              <button class="btn">Message on WhatsApp</button>
+            </a>
           </div>
         </div>
       </div>
@@ -220,42 +149,8 @@
     <div class="footer">
       &copy; <strong>Satvik Laboratory</strong> — Accurate tests • Home collection • NABL & ISO accredited
     </div>
+
   </main>
 
-  <script>
-    function scrollToForm(){ document.getElementById('homeCollection').scrollIntoView({behavior:'smooth'}); }
-    function resetForm(){ document.getElementById('bookingForm').reset(); }
-    async function submitForm(e){
-      e.preventDefault();
-      const f = document.getElementById('bookingForm');
-      const data = {
-        name: f.name.valuex,
-        phone: f.phone.value,
-        tests: f.tests.value,
-        address: f.address.value,
-        time: f.time.value,
-        createdAt: new Date().toISOString()
-      };
-      try{
-        const res = await fetch('/api/book', {
-          method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
-        });
-        if(res.ok){
-          document.getElementById('formMsg').style.display='block';
-          f.reset();
-        } else alert('Server error. Try again.');
-      }catch(err){ alert('Network error.'); console.error(err); }
-    }
-
-    async function submitContact(e){
-      e.preventDefault();
-      const data = { name: document.getElementById('cname').value, email: document.getElementById('cemail').value, msg: document.getElementById('cmsg').value };
-      try{
-        const res = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
-        if(res.ok){ document.getElementById('cmsgbox').style.display='block'; e.target.reset(); }
-        else alert('Error sending message.');
-      }catch(e){ alert('Network error'); }
-    }
-  </script>
 </body>
 </html>
