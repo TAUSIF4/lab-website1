@@ -121,7 +121,4 @@ app.delete('/admin/bookings/:id', adminAuth, (req,res) => {
 
 // --- Start server ---
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server listening on", PORT);
-});
- 
+app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
