@@ -1,165 +1,601 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="light" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <title>Satvik Laboratory — Precise Blood Testing</title>
-  <meta name="description" content="Satvik Laboratory — Home sample collection, NABL & ISO accredited lab. Book blood tests and full-body checkup." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-  body{
-    margin:0;
-    font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-    background:#82c0ff;   /* light blue background */
-    color:#111;
-    -webkit-font-smoothing:antialiased;
-  }
-  :root{
-    --accent:#d23a3a;
-    --muted:#6b7280;
-    --bg:#fbfbfb;
-    --card:#ffffff;
-    --radius:14px;
-    --container:1100px;
-  }
-  *{box-sizing:border-box}
-  header{background:linear-gradient(90deg,#ed3030 0%, #3199f4 100%); border-bottom:1px solid #eee;}
-  .wrap{max-width:var(--container); margin:0 auto; padding:20px; display:flex; gap:20px; align-items:center;}
-  .logo img{height:68px; width:auto;}
-  nav{margin-left:auto;}
-  nav a{margin-left:18px; text-decoration:none; color:#111; font-weight:600;}
-  .hero{max-width:var(--container); margin:28px auto; padding:28px; display:grid; grid-template-columns:1fr 380px; gap:28px; align-items:center;}
-  .card{background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:0 6px 18px rgba(20,20,40,0.06);}
-  h1{font-size:34px; margin:0 0 8px; letter-spacing:-0.5px;}
-  .tag{color:var(--muted); margin-bottom:14px;}
-  .cta-row{display:flex; gap:12px; margin-top:14px;}
-  .btn{background:var(--accent); color:#fff; padding:10px 16px; border-radius:10px; border:0; cursor:pointer; font-weight:700;}
-  .btn.secondary{background:transparent; color:var(--accent); border:2px solid rgba(210,58,58,0.12);}
-  .services{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px;}
-  .service{padding:12px; border-radius:10px; background:#fff; border:1px solid #f0f0f0;}
-  .right-panel img{width:100%; height:auto; border-radius:10px;}
-  .info-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px;}
-  .badge{padding:14px; text-align:center; border-radius:10px; background:#fff; font-weight:600;}
-  .footer{margin-top:20px; padding:20px 0; border-top:1px solid #eee; text-align:center; color:var(--muted);}
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr; padding:18px;}
-    .services{grid-template-columns:repeat(2,1fr);}
-    .info-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media (max-width:560px){
-    nav{display:none;}
-    .services{grid-template-columns:1fr;}
-    .info-grid{grid-template-columns:1fr;}
-    .wrap{padding:12px}
-    h1{font-size:26px}
-  }
-</style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Satvik Laboratory - Complete Diagnostic Services</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom styles for section links to indicate active/non-active */
+        .nav-link {
+            transition: color 0.15s ease-in-out;
+        }
+    </style>
 </head>
+<body class="font-display bg-background-light dark:bg-background-dark scroll-smooth">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
 
-<body>
-  <header>
-    <div class="wrap">
-      <div class="logo"><img src="logo.png" alt="Satvik Laboratory logo"></div>
-      <div style="font-size: 24px; font-weight: 700;"><strong>Satvik Laboratory</strong></div>
-      <nav>
-        <a href="#services">Tests</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- Hero -->
-    <section class="hero">
-        
-      <div class="card">
-        <img src="lab.png" alt="Pictures of Satvik Laboratory" style="width:550px; height:auto; margin-bottom:18px;">
-        <span class="tag">Automatic Computerized Laboratory • NABL | ISO | ICMR</span>
-        <h1>Precise Blood Testing</h1>
-        <p class="muted">Accurate tests done with modern equipment • Home sample collection• Full Body Checkup Avalable • 24×7 service.</p>
-
-        <div class="cta-row">
-          <a href="tel:9817346486"><button class="btn">Call Now</button></a>
-          <button class="btn secondary" onclick="location.href='#services'">View Tests</button>
-        </div>
-
-        <div class="services" id="services">
-          <div class="service">CBC</div>
-          <div class="service">Thyroid (T3/T4/TSH)</div>
-          <div class="service">Diabetic Profile</div>
-          <div class="service">Liver Function Test</div>
-          <div class="service">Kidney Function Test</div>
-          <div class="service">Dengue / Malaria</div>
-        </div>
-      </div>
-
-      <aside class="card right-panel">
-        <img src="flyer.webp" alt="Satvik Laboratory flyer">
-        <div style="margin-top:12px;">
-          <div style="display:flex; justify-content:space-between;">
-            <div>
-              <div style="font-weight:700">Home Sample Collection</div>
-              <div style="color:var(--muted)">Call: <a href="tel:9817346486">98173 46486</a></div>
+        <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200/60 dark:border-gray-700/60 px-4 sm:px-10 lg:px-20 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+            <div class="flex items-center gap-4 text-slate-800 dark:text-slate-200">
+                <div class="text-primary size-7">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+                        <path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Satvik Laboratory</h2>
             </div>
-            <div style="text-align:right">
-              <div style="font-weight:700; color:var(--accent)">24 hr service</div>
-              <div style="font-size:12px; color:var(--muted)">Everyday</div>
+            <div class="flex flex-1 justify-end gap-8">
+                <nav class="hidden md:flex items-center gap-9">
+                    <a class="nav-link text-primary dark:text-primary text-sm font-bold leading-normal" href="#home">Home</a>
+                    <a class="nav-link text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#services">Services</a>
+                    <a class="nav-link text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#about">About Us</a>
+                    <a class="nav-link text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#contact">Contact</a>
+                </nav>
+                <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                    <span class="truncate">Book a Test</span>
+                </a>
             </div>
-          </div>
-        </div>
-      </aside>
-    </section>
+        </header>
 
-    <!-- About -->
-    <section class="wrap" id="about" style="margin-top:18px;">
-      <div class="card">
-        <h2>About Satvik Laboratory</h2>
-        <p class="tag">Accredited Lab • Experienced technicians • Digital reports</p>
-        <p>Satvik Laboratory provides reliable diagnostic services with certified equipment and trained staff. Reports are delivered digitally for convenience.</p>
-      </div>
-    </section>
+        <main class="flex-1">
 
-    <!-- Contact -->
-    <section class="wrap" id="contact" style="margin-top:18px;">
-      <div class="card">
-        <h2>Contact & Visit</h2>
+            <section id="home" class="py-10 sm:py-16">
+                <div class="@container px-4 sm:px-10 lg:px-20">
+                    <div class="@[480px]:p-4">
+                        <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-center text-center sm:text-left px-4 py-10 sm:px-12" data-alt="A clean and modern laboratory with scientific equipment in soft lighting." style='background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBF_rT83FlW7Xg39tVpcHxAXAtX2Ryz52ZOSKj7FoChKZR7z5C6TdDn0WAPy8W11LydaHkK_wOx36V5ptvu5U4fQGs5WMvxmTVP7PBatdhALwgJNSHhWIFrQ7lWedO0cEkYDPGqleRsxrIKqOVXxxXbjyv1p2BVAA9ZFwJMRz1n2vhnEctENaVjPftHksNzMVXFvC1GZ1Uw8lm7_2aXUnpNjY8otvpyGigT1JXGg7xg8ssgSJIJORap0YTz1JAmj19WRUOpXw3_TB0");'>
+                            <div class="flex flex-col gap-4 max-w-2xl">
+                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    Precise Blood Testing, Delivered with Care
+                                </h1>
+                                <h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                    Benefit from Home Sample Collection, 24x7 Service, and Accurate & Fast Results.
+                                </h2>
+                            </div>
+                            <div class="flex-wrap gap-3 flex">
+                                <a href="#services" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                    <span class="truncate">View Tests</span>
+                                </a>
+                                <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-white/20 backdrop-blur-sm text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-white/30 transition-colors">
+                                    <span class="truncate">Call Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div style="display:flex; gap:20px; flex-wrap:wrap;">
-          <div style="flex:1; min-width:240px;">
-            <strong>Address 📍 </strong>
-            <a href="https://maps.app.goo.gl/ei9GLXcCGyBcDs9i6" target="_blank">
-  View Location on Google Maps
-</a>
-            <p>Ghida Chowk, Gohana - Meham Rd, Gohana, Haryana 131301</p>
+                <div class="px-4 sm:px-10 lg:px-20 py-10 sm:pt-16">
+                    <h2 class="text-slate-800 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center">How It Works</h2>
+                    <div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-4">
+                        <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center">
+                            <div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Book Your Test</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Easily schedule your required tests online or by phone.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center">
+                            <div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+                                <span class="material-symbols-outlined">home_health</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Home Sample Collection</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Our certified phlebotomist will visit you at your convenience.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center">
+                            <div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+                                <span class="material-symbols-outlined">lab_profile</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Get Your Report</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Access your accurate results online quickly and securely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <strong>Phone</strong>
-            <p><a href="tel:9817346486">98173 46486</a></p>
+                <div class="bg-white dark:bg-background-dark py-10 sm:py-16">
+                    <div class="px-4 sm:px-10 lg:px-20">
+                        <h2 class="text-slate-800 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] text-center pb-8">What Our Patients Say</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-slate-900 p-6">
+                                <div class="flex items-center gap-4">
+                                    <img class="size-12 rounded-full object-cover" data-alt="Portrait of Anjali Sharma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZsuN5TSfPhSZ7qy-mCJIjBE_4tN2nH8tjCwAykH43t5YnNRVyFuKNiKd0pVJw9x0CI9IgxJC_q6rhfvJI9RDDhp1JLTDh8AqIsuVQbDWiIJs67rvXgg7YOSz4pyZEH0vIgm1_W_YkCWaMCHtQeZs0t_mHXptI1UslxYBJ4c2R_a13xN2jZrxKVji_O6Ve4rcAPo4HwldG89GywB5411njVo1dnyVMTa93cH0TEHnmpFLAbdLOo4p0NBkvdZBZVFehWjf_T07DWiY"/>
+                                    <div>
+                                        <p class="font-bold text-slate-800 dark:text-white">Anjali Sharma</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Regular Patient</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300">"The home collection service is a lifesaver! The phlebotomist was professional and the process was so convenient. I got my results online the very next day. Highly recommend Satvik Labs."</p>
+                            </div>
+                            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-slate-900 p-6">
+                                <div class="flex items-center gap-4">
+                                    <img class="size-12 rounded-full object-cover" data-alt="Portrait of Rohan Mehta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvLncBppQdp6T6iMDQtiFdAmWwVU3KNFpDTH0LvpwKjmRraI6MFvk4mg5-M8M46WTjClGTjzwF2q7LS6KSSKwfDxGKD-H3TQ_yJibnlXQADN22kI0Z0cWMBCFMUT5IejSiElKP4xWCtmapVBFJ9DybdRanIqv9Fja0j6n8Q-_en1x0TfMtu06-rzU-d8Zmdr6oiKKpLZFLpxs12JjBcB0qZEz0wAb-tR0QO7HbUUQz3c_lJtXaSsDZmzBkjr47smY2CKS8dXx2qC4"/>
+                                    <div>
+                                        <p class="font-bold text-slate-800 dark:text-white">Rohan Mehta</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">First-time User</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300">"I was impressed by the professionalism and efficiency. Booking was easy, the staff was courteous, and the reports were detailed and easy to understand. A trustworthy laboratory."</p>
+                            </div>
+                            <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-slate-900 p-6">
+                                <div class="flex items-center gap-4">
+                                    <img class="size-12 rounded-full object-cover" data-alt="Portrait of Priya Desai" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbSHpX2WI9pZcc6U1rBYWKNHYU_-mDodHCD7R0gitygCywZMakXm0zIgeNP2j9l9dkn8Flt4Ujdh_iZ2mL_1n_w5ZWrIa38U2LwidLSfb4bhe2B8DTWmKQvXwn8ZNN8CT6Cg08fh-5s25i7mNwU3ogIGEtCx0n6QG8uwnXJXwVQOqoPAgnY-3O3hHgZdUS3jdKidiJWeURkDlU0AqaDvXGrq9bOjeKlsKTlmj42gekvtAvak8NS77nZZBURAlKLBxH7WNnxEXd5Ec"/>
+                                    <div>
+                                        <p class="font-bold text-slate-800 dark:text-white">Priya Desai</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Health Checkup</p>
+                                    </div>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300">"Accuracy is what matters most to me, and Satvik Laboratory delivers. Their accreditations gave me confidence, and the service exceeded my expectations. I will definitely use them again."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-gray-200 dark:border-gray-800 mx-auto max-w-7xl"/>
 
-            <strong>Hours</strong>
-            <p class="muted">Open 24×7</p>
-          </div>
+            <section id="services" class="py-10 sm:py-16">
+                <div class="layout-content-container flex flex-col max-w-5xl flex-1 w-full gap-12 md:gap-16 mx-auto px-4 sm:px-10 lg:px-20">
+                    <div class="@container">
+                        <div class="flex min-h-[300px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" data-alt="Abstract image of a modern laboratory setting with soft blue and white tones" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzn2XvZ2nbDeFTIFPkr93bif5mD1wo4MQnMBnj-pmGE074arYH7kxDub-HzDnPCBDp82Epjk6H8INMG1ml4tzyrR7VlreyLWLTUdR64Pj2ZiNuQEkozW4WyC9GN1AiHoOodH4VAKwDTJhKlh5QqGMaBWm3uCUVPJENwWWEu5qZTq7F-lvm6MHx3vQtmuaLGtWKCvM9lp7FMPt-KIDb2eNyExLX6i9K7aj4-HcWPejqIENmCiBQjypVWNVzvs2NnY1KZiDDiciDq9g");'>
+                            <div class="flex flex-col gap-2">
+                                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Our Diagnostic Services</h1>
+                                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-lg mx-auto">Accurate, reliable, and convenient testing you can trust. Explore our wide range of tests designed for your health and well-being.</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 md:gap-6">
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">bloodtype</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Complete Blood Count (CBC)</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">A comprehensive test that screens for a variety of disorders like anemia and infection.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">endocrinology</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Thyroid Profile</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Measures TSH, T3, and T4 hormones to assess thyroid function and related disorders.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">glucose</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Diabetic Profile</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Includes HbA1c and Fasting Blood Sugar to monitor and manage diabetes.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">gastroenterology</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Liver Function Test (LFT)</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Assesses the health and function of your liver by measuring key enzymes and proteins.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">nephrology</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Kidney Function Test (KFT)</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Evaluates how well your kidneys are working to filter waste from your blood.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark p-5 flex-col hover:shadow-lg transition-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl">thermometer</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Fever Panel (Dengue/Malaria)</h3>
+                                <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Screens for common fevers like Dengue and Malaria for timely diagnosis and treatment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10 p-6 md:p-10 rounded-xl bg-white dark:bg-background-dark border dark:border-white/10 @container">
+                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 lg:items-center">
+                            <div class="flex flex-col gap-4 flex-1">
+                                <h2 class="text-[#111418] dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Convenient Home Sample Collection</h2>
+                                <p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal max-w-[720px]">We bring our professional lab services to your doorstep. Schedule a visit, and our certified phlebotomist will collect your sample hygienically and safely from the comfort of your home.</p>
+                                <div class="flex items-center gap-3 mt-2">
+                                    <span class="material-symbols-outlined text-primary text-2xl">call</span>
+                                    <span class="text-[#111418] dark:text-white text-lg font-bold">98173 46486</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="flex min-w-[84px] max-w-[480px] w-full lg:w-fit cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                <span class="truncate">Schedule a Home Visit</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] dark:border-white/10 bg-background-light dark:bg-background-dark/50 p-4 flex-col">
+                                <span class="material-symbols-outlined text-primary">update</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[#111418] dark:text-white text-base font-bold leading-tight">Available 24/7, Everyday</h3>
+                                    <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Our home collection service is available around the clock, every day of the week.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] dark:border-white/10 bg-background-light dark:bg-background-dark/50 p-4 flex-col">
+                                <span class="material-symbols-outlined text-primary">health_and_safety</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[#111418] dark:text-white text-base font-bold leading-tight">Safe & Hygienic</h3>
+                                    <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">We follow strict safety protocols to ensure a completely sterile collection process.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] dark:border-white/10 bg-background-light dark:bg-background-dark/50 p-4 flex-col">
+                                <span class="material-symbols-outlined text-primary">lab_profile</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-[#111418] dark:text-white text-base font-bold leading-tight">Fast Reporting</h3>
+                                    <p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Receive your test results quickly and securely through our online portal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-gray-200 dark:border-gray-800 mx-auto max-w-7xl"/>
 
-          <div style="flex:1; min-width:240px;">
-            <strong>Send a message</strong>
-            <p class="muted">For any queries, call or WhatsApp:</p>
-            <a href="https://wa.me/919817346486" target="_blank">
-              <button class="btn">Message on WhatsApp</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+            <section id="about" class="py-10 sm:py-16">
+                <div class="layout-content-container flex flex-col w-full max-w-7xl px-4 sm:px-10 gap-12 sm:gap-16 mx-auto">
+                    <div class="@container">
+                        <div class="@[480px]:p-4">
+                            <div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" data-alt="A clean, modern laboratory background with soft blue and white tones, suggesting precision and technology." style='background-image: linear-gradient(rgba(16, 25, 34, 0.5) 0%, rgba(16, 25, 34, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA07RbRB5mf15aIYiaGEFZeeYZndmfqhXE8_I1Q6ilSfnUFKa3-x1A_sdXt-p2673q9-nbOtk8P__D8NFG4XYY4TwGRrgH5oca0IZzMqrnDn7_7wuABJ5laB0rzpczZ_4N1-omjcO6aUOeuj1-P3lPt9elmQ4jW2n1KWDqwk07BqVlxLq0iltGfGiFgbvs0fpVVLPLZbOlxHibUfZy-vpbCSdMJ9eAEN9iCvebNM8tUPz28Jn_2FwAc2ndXubc7TE7vFJZ5EZYSHcA");'>
+                                <div class="flex flex-col gap-4 max-w-3xl">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">About Satvik Laboratory</h1>
+                                    <h2 class="text-zinc-200 text-base font-normal leading-normal @[480px]:text-lg">Satvik Laboratory provides reliable diagnostic services with certified equipment and trained staff. Reports are delivered digitally for convenience.</h2>
+                                </div>
+                                <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base hover:opacity-90 transition-opacity">
+                                    <span class="truncate">Book a Test Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="footer">
-      &copy; <strong>Satvik Laboratory</strong> — Accurate tests • Home collection • NABL & ISO accredited
+                    <div class="flex flex-col gap-10 @container">
+                        <div class="flex flex-col gap-4 text-center items-center">
+                            <h2 class="text-zinc-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight @[480px]:text-4xl max-w-2xl">Professionalism and Trustworthiness You Can Rely On</h2>
+                            <p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal max-w-3xl">We are committed to providing the highest quality diagnostic services, ensuring accuracy and care from sample collection to final report.</p>
+                        </div>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0">
+                            <div class="flex flex-1 gap-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 flex-col">
+                                <div class="text-primary"><span class="material-symbols-outlined" style="font-size: 32px;">verified_user</span></div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight">Accredited Lab</h3>
+                                    <p class="text-zinc-600 dark:text-zinc-400 text-sm font-normal leading-normal">Our lab meets the highest standards of quality and is equipped with certified, state-of-the-art technology.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-3 pb-3">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" data-alt="A scientist looking at a test tube in a modern lab." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANoC5Wkw-J0OIK_lUM8-RjZAWJfiEnP2m4l0iw1EIhox-wf406REr--QF5RLzgJp55DE_3M_ai5iQY9Ecp4j7HbdtvvG44NzU8FjQGlfmFRQLxV_h009Q0ImwfFFaaxAuR_XkAO1o3IbA6cHg_UmEUWRYnjyOQqsuL5N174CK3GnyfofMT2QfyFSKC_0Temftam5AaUKzTp-Xo0V5DNm-Wylou3RH_xNvP57_qPLaHp18OekcxnTizGPrzIrlnDiMhsFG1b8q6dnU");'></div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">NABL Accredited</p>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">National Accreditation Board for Testing and Calibration Laboratories.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col gap-3 pb-3">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" data-alt="An official ISO certification document displayed on a wall." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUOmo_8oZGbdTFg9oYM8xmscgg1NRzY4dQA2m68RUYklQbxOwI5Fhy5W2j_BEanqf_4cHdWtGvtvX2JCelapNRqATJilGTm_QTKphS_tZJXIi8ck1wVRTswnPkvhfSptTf3IpEu0mVy36obrz5xi6uzyz63-K6sJW0cb-81zJ8A7TJPhwTGcyvh0fIIBrK8mUYxCa0OO9ZVUA4NVXclmsTU7nR59ka937psP2XN6TwMF8nyiYPuBp9KlTREwxuJplRCc6XW84qmRA");'></div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">ISO Certified</p>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">International Organization for Standardization certified processes.</p>
+                                </div>
+                            </div>
+                             <div class="flex flex-1 flex-col gap-3 pb-3">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" data-alt="A research facility with microscopes and scientific equipment." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0y0zpTl1plloKUekbkutJKQbC47b8e4H58lufzVmvBFT9vc4RYYTHChUq-hPSJExzzmzOi2PIItB6DkvrjU07HvfPh7XmXFKF8YqNoAqyQGbkib6yRhS2gwoKf0eP2pc6U_7fDbQVBI4X8VYZrIXi8nl72DmB_hR7zr_MQWdSLMsXklwHlHSrJyOE16zt9DxM4Efxg9CqT0mWSyQFpzPVJm1QBJkEpSJjbmww83-TcjobgxIhigPCfzSVDwFkIXuTZ7BhzMhmhYg");'></div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">ICMR Approved</p>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Approved by the Indian Council of Medical Research.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div class="flex flex-col gap-4">
+                            <h2 class="text-zinc-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] sm:text-3xl">Our Simple, Four-Step Process</h2>
+                            <p class="text-zinc-600 dark:text-zinc-400">We've streamlined our process to be as simple and convenient for you as possible. Follow these easy steps to get your results quickly and securely.</p>
+                        </div>
+                        <div class="grid grid-cols-[40px_1fr] gap-x-4">
+                            <div class="flex flex-col items-center gap-2 pt-3">
+                                <div class="text-primary"><span class="material-symbols-outlined">edit_calendar</span></div>
+                                <div class="w-px bg-zinc-300 dark:bg-zinc-700 h-full grow"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col pb-6">
+                                <p class="text-zinc-900 dark:text-white text-base font-medium leading-normal">Book Test</p>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-normal leading-normal">Easily schedule your test online or by phone at your convenience.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="text-primary"><span class="material-symbols-outlined">colorize</span></div>
+                                <div class="w-px bg-zinc-300 dark:bg-zinc-700 h-full grow"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col pb-6">
+                                <p class="text-zinc-900 dark:text-white text-base font-medium leading-normal">Sample Collection</p>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-normal leading-normal">Visit our lab or opt for home collection by our trained phlebotomists.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <div class="text-primary"><span class="material-symbols-outlined">biotech</span></div>
+                                <div class="w-px bg-zinc-300 dark:bg-zinc-700 h-full grow"></div>
+                            </div>
+                            <div class="flex flex-1 flex-col pb-6">
+                                <p class="text-zinc-900 dark:text-white text-base font-medium leading-normal">Lab Analysis</p>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-normal leading-normal">Your sample is processed and analyzed in our state-of-the-art facility.</p>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 pb-3">
+                                <div class="text-primary"><span class="material-symbols-outlined">download_for_offline</span></div>
+                            </div>
+                            <div class="flex flex-1 flex-col pb-6">
+                                <p class="text-zinc-900 dark:text-white text-base font-medium leading-normal">Digital Report</p>
+                                <p class="text-zinc-600 dark:text-zinc-400 text-sm font-normal leading-normal">Receive a secure digital copy of your report as soon as it's ready.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-10">
+                        <div class="flex flex-col gap-4 text-center items-center">
+                            <h2 class="text-zinc-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] sm:text-3xl">Meet Our Experts</h2>
+                            <p class="text-zinc-600 dark:text-zinc-400 text-base font-normal leading-normal max-w-3xl">Our dedicated team of certified professionals is the backbone of our laboratory. Their expertise and commitment to quality ensure you receive the most accurate results.</p>
+                        </div>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <img class="h-40 w-40 rounded-full object-cover" data-alt="Professional headshot of Dr. Anjali Sharma, a woman with dark hair, wearing a lab coat and smiling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9qjBmvRb5GhESmVLTo4OLggpEkkn_ZRlFa2UyCJFc_0a6QTEmFkoI_p8uAySh-mGe_53nuRipeacFzD87grjmTe82ToI-_26ozR_BNr6oq0ujk7CYjAPdXTiayo7QxfrfBVBhx8ffsfBz2vP6-jDReSWtGjmV_NR8U0hp-Wyb3XVL_TKFpTzCWNYN_jnKMeL-3HuCslMsJo1YXQZ6PbI7OHBcr1xfhx3cDBE_FuCa_TwCBfm1r5o4f7Zr-KgiAmGbMfRLL59K2bs"/>
+                                <div>
+                                    <p class="font-bold text-zinc-900 dark:text-white">Dr. Anjali Sharma</p>
+                                    <p class="text-sm text-primary">Lead Pathologist</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <img class="h-40 w-40 rounded-full object-cover" data-alt="Professional headshot of Rohan Mehta, a man with short black hair and glasses, wearing a blue shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZByIe33pv0ZEfJ7PQk-HhYYIUEpMT2t16GYpeGZE4SHpss27PcCOstuk0omLnHyxpBUWDhoWIL0bM1FLwTXAmrZuvCyxsKLfkkdnI_TKpWpGAa0X4bQ4l8kks1fYG-ZX9pvuvZ6odpwka7Lr2yursOb9fgq4snarqpJSmX9K2CO4FYFgtT2wrubOn4KJHBAlMI-G25NMRhiHf8M7xxDPHzXuG1S7YiFiXSW-mj0li1CUzVvMWTA79FVnvkKZGiCBkx76nmP4VetU"/>
+                                <div>
+                                    <p class="font-bold text-zinc-900 dark:text-white">Rohan Mehta</p>
+                                    <p class="text-sm text-primary">Senior Lab Technician</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <img class="h-40 w-40 rounded-full object-cover" data-alt="Professional headshot of Priya Desai, a woman with long hair, wearing professional attire and looking at the camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwUP_7yQHH3Qhvc50TQJbKWh8NTC3k-CUxs-5YebsPLoDWKkSQOXawKQkvcgENLX3w6eZIIOOQ8a9IN_iw-wOd3CQx_20ZOlP8AqdHD5-mOx0s0mN1zDu0lMt916MhVVKDEOEOrh_Hz8bpezLaz-c2RM3MHDtZtmyhUEa3fLpT2eEV7-It1T1NaAj01Yh7ozs_DFWE8zS2emNWmk_X2Je-hJdxoaG-N6u3qCIGBEuLLM2xwirvTBhiGfYaZR-G_wh9QLOtg70U1Ko"/>
+                                <div>
+                                    <p class="font-bold text-zinc-900 dark:text-white">Priya Desai</p>
+                                    <p class="text-sm text-primary">Quality Assurance Manager</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center text-center gap-3">
+                                <img class="h-40 w-40 rounded-full object-cover" data-alt="Professional headshot of Vikram Singh, a man with a beard, wearing a formal shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZngO7Of8JdzLd2QS9S-ZNPVORNhXrjuLNYgPMmxmQt80_aCqDofyLzdi6Nt65TQn7Q-2MEW111mYTmOd2dAVki-V-57bgCUIXA0_kPMFUXZxv7z5xjEv9Ya1bYTFR_Isf9UFGpCMIiJB8V1W5Fb_KZqsvo_YgZkD4aDTkSXUjBmkFpDMe6PgVv7lUxO1g5jwFa0S_5wFiPNb6IuudTtr60VHA120pEvqM4B4-zxBDLPWA3nNMD_DBjB0c2Hb3ipZD6SuauoAMPOA"/>
+                                <div>
+                                    <p class="font-bold text-zinc-900 dark:text-white">Vikram Singh</p>
+                                    <p class="text-sm text-primary">Chief Medical Officer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-primary/10 dark:bg-primary/20 p-8 sm:p-12 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+                        <div class="flex flex-col gap-2 max-w-2xl">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">Ready for Accurate and Reliable Results?</h2>
+                            <p class="text-zinc-600 dark:text-zinc-300">Take the first step towards better health insights. Schedule your test with Satvik Laboratory today.</p>
+                        </div>
+                        <a href="#contact" class="flex-shrink-0 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Book a Test Now</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="border-gray-200 dark:border-gray-800 mx-auto max-w-7xl"/>
+
+            <section id="contact" class="py-10 sm:py-16">
+                <div class="mx-auto max-w-6xl px-4 sm:px-10 lg:px-20">
+                    <div class="flex flex-wrap justify-between gap-3 mb-10">
+                        <h1 class="text-gray-900 dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] min-w-72">Contact Satvik Laboratory</h1>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Our Location & Hours</h2>
+                                <div class="flex flex-col gap-4 mt-4">
+                                    <div class="flex items-start gap-4 bg-white dark:bg-background-dark p-4 rounded-lg">
+                                        <div class="text-gray-700 dark:text-gray-300 flex items-center justify-center rounded-lg bg-background-light dark:bg-gray-800 shrink-0 size-10">
+                                            <span class="material-symbols-outlined text-2xl">location_on</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-gray-800 dark:text-gray-200 text-base font-normal leading-normal">Ghida Chowk, Gohana - Meham Rd, Gohana, Haryana 131301</p>
+                                            <a class="text-primary text-sm font-medium leading-normal mt-1 hover:underline" href="https://www.google.com/maps/search/?api=1&query=Ghida+Chowk,+Gohana+-+Meham+Rd,+Gohana,+Haryana+131301" rel="noopener noreferrer" target="_blank">Get Directions</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 bg-white dark:bg-background-dark p-4 rounded-lg">
+                                        <div class="text-gray-700 dark:text-gray-300 flex items-center justify-center rounded-lg bg-background-light dark:bg-gray-800 shrink-0 size-10">
+                                            <span class="material-symbols-outlined text-2xl">call</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-gray-800 dark:text-gray-200 text-base font-normal leading-normal">98173 46486</p>
+                                            <a class="text-primary text-sm font-medium leading-normal mt-1 hover:underline" href="tel:9817346486">Call Us</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 bg-white dark:bg-background-dark p-4 rounded-lg">
+                                        <div class="text-gray-700 dark:text-gray-300 flex items-center justify-center rounded-lg bg-background-light dark:bg-gray-800 shrink-0 size-10">
+                                            <span class="material-symbols-outlined text-2xl">schedule</span>
+                                        </div>
+                                        <p class="text-gray-800 dark:text-gray-200 text-base font-normal leading-normal self-center">Open **24 Hours, 7 Days a Week**</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full h-80 rounded-xl overflow-hidden shadow-lg">
+                                <iframe allowfullscreen="" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.659929281358!2d76.69188061509355!3d29.11545738222998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d9f485121b8c1%3A0x66c75f3a02c9183!2sGhida%20Chowk%2C%20Gohana%2C%20Haryana%20131301!5e0!3m2!1sen!2sin!4v1689252098765!5m2!1sen!2sin"></iframe>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg flex flex-col gap-6">
+                            <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Send a Message / Book a Test</h2>
+                            <p class="text-gray-600 dark:text-gray-400 text-base">For immediate assistance or to schedule your home collection, please reach out to us via WhatsApp.</p>
+                            <a class="w-full flex items-center justify-center gap-3 px-6 py-3 rounded-lg bg-[#25D366] text-white font-bold text-lg hover:bg-[#1EBE57] transition-colors" href="https://wa.me/919817346486" rel="noopener noreferrer" target="_blank">
+                                <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.296-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+                                <span class="truncate">Message us on WhatsApp</span>
+                            </a>
+                            <div class="flex items-center gap-4">
+                                <hr class="flex-1 border-gray-200 dark:border-gray-700"/>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm">OR</span>
+                                <hr class="flex-1 border-gray-200 dark:border-gray-700"/>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-base -mt-2">Fill out the form below for general inquiries.</p>
+                            <form class="flex flex-col gap-4">
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block" for="name">Full Name</label>
+                                    <input class="w-full rounded border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="name" name="name" placeholder="Your Full Name" type="text"/>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block" for="email">Email</label>
+                                    <input class="w-full rounded border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="email" name="email" placeholder="Your Email" type="email"/>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block" for="subject">Subject</label>
+                                    <input class="w-full rounded border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="subject" name="subject" placeholder="Subject" type="text"/>
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block" for="message">Message</label>
+                                    <textarea class="w-full rounded border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary focus:border-primary" id="message" name="message" placeholder="Type your message here..." rows="4"></textarea>
+                                </div>
+                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 mt-2" type="submit">
+                                    <span class="truncate">Send Inquiry</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-slate-900 dark:bg-black text-slate-300">
+            <div class="px-4 sm:px-10 lg:px-20 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="text-primary size-7">
+                                <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+                                    <path d="M35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Satvik Laboratory</h2>
+                        </div>
+                        <p class="mt-4 text-sm text-slate-400 max-w-sm">Providing accurate and timely diagnostic services with a commitment to patient care and quality.</p>
+                        <div class="flex flex-wrap justify-start gap-4 mt-6">
+                            <a href="#">
+                                <img alt="Facebook" class="dark:invert h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmrXEWlABxFGr-oIpZAzUWSrm_TeMbAPEdZq53WuDjDBpLadvI-v8tkhgB6WoHteqal9GCUXdYqe0GAzTu5uqMyKfnEHrJLHXio5-LaF-IaLh5NLneqj8Mf8DAcb0x7CzhwlHH0EGb3xehy5PC6zyD4RUIjWJzRVpvA5l1L65TG7AA6bRDrsC74lOM5Z9d1XcsUhSMwwDFodB2w0mNGigB0NOQJKJjQPF_Gsz5ZRe1H-0AjWARHx8upTdNZvfgiGOJzCMy4Q6rkEE"/>
+                            </a>
+                            <a href="#">
+                                <img alt="Twitter" class="dark:invert h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGaJ4U_psGZywOWeQE9IC_JcfMdbX5W1M7JSKnk6-hqfkFCEk5DmT84ihwqXgjmhbiT4O2sFJrWu-SHQaZd3DZUcXjAAAd__3sKhre5tWrY4CkdByqiOANYs95Vfs6tn7lhMcWJ9XKgF6X8r5QWzidLWIXng7_s26puxlHSvwT3-YNNl-fCPV7hKsoNIbMU2SYL1exvt6SzLcryUn71s5OCtT73-5Pp6Sutgh5H16lkOjtwNQTS9Qa885gSNa6Xh1pmM9emiF0aBs"/>
+                            </a>
+                            <a href="#">
+                                <img alt="LinkedIn" class="dark:invert h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVwbwHNucTjf7iGoN2w5wzDQ4oiMucrlINQ8bG-X70mqSLKKajyBYIn_voQzRtWeXsMTeDF70CmTFArkzf5MAJvasWywnhAo_F4UpGrLTJVL9wwPjAJ8E4AiIuobdStWfi6fcht5VbckprlwGzbK02xufDYC5E5Vz0bI-Vvwf6RLDbQVicEQxrgvRLejkh89P8y67T2XLHWFhYbKkXxbGC3y5MI44AVTKfotHBF_UOtUvZBvdDSoh-NCH8FDX-kPv6uf4HKFC7J2M"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white mb-4">Quick Links</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#about">About Us</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#services">All Tests</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#contact">Contact Us</a></li>
+                            <li><a class="text-sm text-zinc-400 hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                            <li><a class="text-sm text-zinc-400 hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white mb-4">Contact</h3>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-base mt-0.5">location_on</span>
+                                <span>123 Health St, MedCity, India (Primary) / Ghida Chowk, Gohana... (Detailed)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">call</span>
+                                <span>+91 98173 46486</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">mail</span>
+                                <span>contact@satviklabs.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
+                    <p>© 2024 Satvik Laboratory. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
+</div>
 
-  </main>
+<script>
+    // Simple script to handle navigation link active state
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // Adjust as needed
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+                if (navLink) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary', 'font-bold');
+                        link.classList.add('text-slate-800', 'dark:text-slate-300', 'font-medium');
+                    });
+
+                    if (entry.isIntersecting) {
+                        navLink.classList.add('text-primary', 'font-bold');
+                        navLink.classList.remove('text-slate-800', 'dark:text-slate-300', 'font-medium');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('main section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add smooth scroll behavior to links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
 </body>
 </html>
